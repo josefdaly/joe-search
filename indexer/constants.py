@@ -1,0 +1,23 @@
+STOP_WORDS = [
+    "a", "an", "the", "and", "or", "but", "if", "because", "as",
+    "this", "that", "these", "those", "is", "are", "was", "were",
+    "am", "be", "been", "being", "have", "has", "had", "having",
+    "do", "does", "did", "doing", "can", "could", "will", "would",
+    "shall", "should", "might", "must", "may", "of", "in", "on",
+    "at", "by", "for", "to", "with", "about", "above", "below",
+    "over", "under", "between", "through", "into", "onto", "upon",
+    "from", "out", "off", "up", "down", "forward", "backward",
+    "left", "right", "inside", "outside", "within", "without",
+    "before", "after", "during", "while", "since", "until", "throughout",
+    "against", "among", "around", "amongst", "beside", "besides",
+    "along", "alongside", "regarding", "via", "with regard to",
+    "according to", "due to", "because of", "in spite of", "despite",
+    "overdue", "unless", "until", "whereas", "whereby", "wherein",
+    "whereupon", "wherever", "whenever", "whatever", "whichever",
+    "however", "why", "what", "which", "who", "whom", "whose",
+    "how", "whether", "whosever", "whosoever", "wheresoever", "howsoever",
+    "whenever", "where", "whence", "why", "whither", "theirs", "theirselves",
+    "themselves", "our", "ours", "ourselves", "yours", "your", "yourself",
+    "yourselves", "my", "mine", "myself", "hers", "her", "herself",
+    "his", "him", "himself", "its", "it", "itself", "one", "ones", "one's"
+]
