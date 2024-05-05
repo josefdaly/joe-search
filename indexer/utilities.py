@@ -1,4 +1,4 @@
-import requests
+import requests, re
 from bs4 import BeautifulSoup
 
 from indexer.constants import STOP_WORDS
@@ -18,8 +18,15 @@ def normalize_encoding(text):
         normalized_text = text.decode('utf-8', 'ignore')
     else:
         normalized_text = text.encode('utf-8', 'ignore').decode('utf-8')
+    return normalized_text
 
-    return normalized_text.strip().lower()
+
+def clean_text(text):
+    # Remove punctuation using regular expression
+    cleaned_text = re.sub(r'[^\w\s]', '', text)
+    # Convert to lowercase
+    cleaned_text = cleaned_text.strip().lower()
+    return cleaned_text
 
 
 def index_web_document(url):
@@ -28,7 +35,7 @@ def index_web_document(url):
         text = BeautifulSoup(response.content).get_text()
         normalized_url = normalize_encoding(url)
         for word in text.split(' '):
-            normalized_word = normalize_encoding(word)
+            normalized_word = normalize_encoding(clean_text(word))
             if normalized_word in STOP_WORDS:
                 continue
             add_to_index(

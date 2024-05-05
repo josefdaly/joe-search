@@ -17,9 +17,10 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
-from search.views import single_word_search
+from search.views import single_word_search, multi_word_search
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('search/', single_word_search),
+    path('multisearch/', multi_word_search),
 ]
