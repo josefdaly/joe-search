@@ -2,3 +2,4 @@ django==4.2.6
 bs4
 requests
 ipdb
+django-cors-headers
