@@ -2,6 +2,8 @@ from django.http import JsonResponse
 from django.db import models
 
 from indexer.models import DocumentWordIndex, Document
+from indexer.utilities import clean_text, normalize_encoding
+from indexer.constants import STOP_WORDS
 
 
 def single_word_search(request):
@@ -26,7 +28,8 @@ def multi_word_search(request):
     if search_terms:
         query = models.Q()
         for term in search_terms.split(' '):
-            query |= models.Q(word__text__icontains=term)
+            if not clean_text(normalize_encoding(term)) in STOP_WORDS:
+                query |= models.Q(word__text__icontains=term)
         urls = DocumentWordIndex.objects.filter(
             query
         ).values(
