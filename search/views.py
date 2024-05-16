@@ -33,7 +33,9 @@ def multi_word_search(request):
         urls = DocumentWordIndex.objects.filter(
             query
         ).values(
-            'document_id__url'
+            'document_id__url',
+            'document_id__name',
+            'document_id__meta',
         ).annotate(
             total_count=models.Sum('count')
         ).order_by('-total_count')[:5]
