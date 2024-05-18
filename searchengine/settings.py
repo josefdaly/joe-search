@@ -27,12 +27,6 @@ SECRET_KEY = 'django-insecure-wf9=i(-mus!nc42sa)-t4)si+txmnu=-mij&_j)2=!-%=!vu@g
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-CORS_ALLOWED_ORIGINS = [
-    'https://josefdaly.github.io/',
-]
-ALLOWED_HOSTS = settings_local.ALLOWED_HOSTS
-
-
 # Application definition
 
 INSTALLED_APPS = [
@@ -123,6 +117,11 @@ USE_I18N = True
 
 USE_TZ = True
 
+CORS_ALLOWED_ORIGINS = [
+    'https://josefdaly.github.io/',
+]
+CORS_ALLOW_ALL_ORIGINS = True
+ALLOWED_HOSTS = ['*']
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
