@@ -27,7 +27,9 @@ SECRET_KEY = 'django-insecure-wf9=i(-mus!nc42sa)-t4)si+txmnu=-mij&_j)2=!-%=!vu@g
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-CORS_ORIGIN_ALLOW_ALL = True
+CORS_ALLOWED_ORIGINS = [
+    'https://josefdaly.github.io/',
+]
 ALLOWED_HOSTS = settings_local.ALLOWED_HOSTS
 
 
