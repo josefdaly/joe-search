@@ -4,6 +4,7 @@ from django.db import models
 from indexer.models import DocumentWordIndex, Document
 from indexer.utilities import clean_text, normalize_encoding
 from indexer.constants import STOP_WORDS
+from django.views.decorators.csrf import csrf_exempt
 
 
 def single_word_search(request):
@@ -22,6 +23,7 @@ def single_word_search(request):
     return JsonResponse({'top_hits': list(urls)})
 
 
+@csrf_exempt
 def multi_word_search(request):
     search_terms = request.GET.get('q', '')
 
